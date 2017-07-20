@@ -5,7 +5,9 @@
         <div class="col-md-12">
             <h2>Registrera en ny användare</h2>
 
-            <form class="" action="index.html" method="post">
+            @include('layouts.errors')
+
+            <form action="/register" method="POST">
                 {{ csrf_field() }}
 
                 <div class="form-group">
@@ -21,6 +23,11 @@
                 <div class="form-group">
                     <label for="password">Lösenord:</label>
                     <input class="form-control" type="password" name="password">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_confirmation">Bekräfta lösenord:</label>
+                    <input class="form-control" type="password" id="password_confirmation" name="password_confirmation">
                 </div>
 
                 <div class="form-group">

@@ -5,6 +5,11 @@
 Route::get('/login', 'SessionsController@create');
 
 /*
+* destroy current session
+*/
+Route::get('/logout', 'SessionsController@destroy');
+
+/*
 * create a new user view
 */
 Route::get('/register', 'RegistrationController@create');
@@ -12,4 +17,4 @@ Route::get('/register', 'RegistrationController@create');
 /*
 * store a new user
 */
-Route::get('/register', 'RegistrationController@store');
+Route::post('/register', 'RegistrationController@store');
