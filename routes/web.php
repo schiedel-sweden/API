@@ -1,16 +1,20 @@
 <?php
+/*
+* create a new session view
+*/
+Route::get('/login', 'SessionsController@create');
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+* destroy current session
 */
+Route::get('/logout', 'SessionsController@destroy');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+* create a new user view
+*/
+Route::get('/register', 'RegistrationController@create');
+
+/*
+* store a new user
+*/
+Route::post('/register', 'RegistrationController@store');
