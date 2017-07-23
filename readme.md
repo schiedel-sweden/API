@@ -11,7 +11,7 @@ $ cd API
 
 3. Switch to your branch ex: `git checkout dev`
 
-4. Run 
+4. Run
 ```BASH
 $ composer install
 $ npm install
@@ -24,5 +24,10 @@ $ npm install
 7. Run
 ``` BASH
 $ php arisan migrate
+$ php artisan db:seed --class=UsersTableSeeder
 $ php artisan serve
 ```
+
+After doing this you will find a user in the database you can use to sign in with to create new users and import your excelfiles.
+* email => 'info@handelsmarketing.se'
+* password => 'hejsan123'
