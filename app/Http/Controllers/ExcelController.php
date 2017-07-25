@@ -10,12 +10,15 @@ class ExcelController extends Controller
     /**
     * Display a listing of the resource.
     *
-    * @return \Illuminate\Http\Response
+    * @return JSON
     */
     public function index()
     {
         $columns = Excel::where('is_deleted', false)->get();
 
+        /*
+        * Will return the query as json to adress /api/excel
+        */
         return $columns;
     }
 
