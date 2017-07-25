@@ -13,7 +13,7 @@ class CreateExcelTable extends Migration
     */
     public function up()
     {
-        Schema::create('excel', function (Blueprint $table) {
+        Schema::create('excels', function (Blueprint $table) {
             $table->increments('id');
             $table->string('material');
             $table->string('designation')->unique();
@@ -21,7 +21,7 @@ class CreateExcelTable extends Migration
             $table->string('currency');
             $table->string('price_factor');
             $table->string('unit_price');
-            $table->boolean('deleted')->default('0');
+            $table->boolean('is_deleted')->default('0');
             $table->softDeletes();
             $table->timestamps();
         });
