@@ -1,15 +1,6 @@
 # Schiedel API
 
 ### Installation
-1. Create a directory for all the Schiedel Apps `mkdir schiedel` `cd schiedel`
-
-2. Run
-``` BASH
-$ git clone https://github.com/schiedel-sweden/API.git
-$ cd API
-```
-
-3. Switch to your branch ex: `git checkout dev`
 Make sure you have php-mbstring and php-xml installed, as well as php7.1 and php7.1-mysql.
 To install them on Ubuntu, linux, run:
 
@@ -28,10 +19,22 @@ $ sudo apt update
 $ sudo apt install -y php7.1; sudo apt install php7.1-mysql
 ```
 
+
+1. Create a directory for all the Schiedel Apps `mkdir schiedel` `cd schiedel`
+
+2. Run
+``` BASH
+$ git clone https://github.com/schiedel-sweden/API.git
+$ cd API
+```
+
+3. Switch to your branch ex: `git checkout dev`
+
 4. Run
 ```BASH
 $ composer install
 $ npm install
+$ npm run production
 ```
 
 5. Create a database and name it whatever you want.
@@ -41,6 +44,8 @@ $ npm install
 7. Run
 ``` BASH
 $ php arisan migrate
+$ php artisan key:generate
+$ php artisan config:clear
 $ php artisan db:seed --class=UsersTableSeeder
 $ php artisan serve
 ```
