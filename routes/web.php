@@ -21,7 +21,4 @@ Route::POST('/', 'ExcelFileController@store')->middleware('auth');
 */
 Route::get('/api/excel', 'ExcelFileController@index');
 
-// https://github.com/Maatwebsite/Laravel-Excel
-// http://www.maatwebsite.nl/laravel-excel/docs/import
-// http://blog.fossasia.org/import-excel-file-data-in-mysql-database-using-php/
-// https://stackoverflow.com/questions/31377783/reading-excel-file-and-uploading-to-database-laravel-5
+// https://stackoverflow.com/questions/43224300/override-default-auth-routes-in-laravel-5-4
