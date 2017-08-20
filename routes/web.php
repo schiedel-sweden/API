@@ -5,20 +5,21 @@
 */
 Auth::routes();
 
+
 /*
 * Route for home
 */
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 
 /*
 * Route to store excel files in the databse.
 */
-Route::POST('/', 'ExcelController@store')->middleware('auth');
-
+Route::POST('/', 'ExcelFileController@store')->middleware('auth');
+//Route::get('/get', 'ExcelFileController@store');
 /*
 * Route for the API
 */
-Route::get('/api/excel', 'ExcelController@index');
+Route::get('/api/excel', 'ExcelFileController@index');
 
 // https://github.com/Maatwebsite/Laravel-Excel
 // http://www.maatwebsite.nl/laravel-excel/docs/import
