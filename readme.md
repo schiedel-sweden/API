@@ -31,3 +31,8 @@ $ php artisan serve
 After doing this you will find a user in the database you can use to sign in with to create new users and import your excelfiles.
 * email => 'info@handelsmarketing.se'
 * password => 'hejsan123'
+
+## To publish application
+`php artisan vendor:publish`
+
+

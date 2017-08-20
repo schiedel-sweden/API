@@ -22,3 +22,5 @@ Route::get('/api/excel', 'ExcelController@index');
 
 // https://github.com/Maatwebsite/Laravel-Excel
 // http://www.maatwebsite.nl/laravel-excel/docs/import
+// http://blog.fossasia.org/import-excel-file-data-in-mysql-database-using-php/
+// https://stackoverflow.com/questions/31377783/reading-excel-file-and-uploading-to-database-laravel-5
