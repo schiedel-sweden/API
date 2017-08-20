@@ -10,6 +10,23 @@ $ cd API
 ```
 
 3. Switch to your branch ex: `git checkout dev`
+Make sure you have php-mbstring and php-xml installed, as well as php7.1 and php7.1-mysql.
+To install them on Ubuntu, linux, run:
+
+```BASH
+$ sudo apt install php-mbstring; sudo apt install php-xml;
+```
+Keep in mind that the above command will only work on Linux systems running on 
+Ubuntu 17.04 or similar. 
+In order to install php7.1 you also need to have a 3d party ppa.
+This can be done by running the following:
+
+```BASH
+$ sudo apt install python-software-properties
+$ sudo add-apt-repository ppa:ondrej/php
+$ sudo apt update
+$ sudo apt install -y php7.1; sudo apt install php7.1-mysql
+```
 
 4. Run
 ```BASH
