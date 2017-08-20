@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExcelTable extends Migration
+class CreateExcelFileTable extends Migration
 {
     /**
     * Run the migrations.
@@ -15,12 +15,12 @@ class CreateExcelTable extends Migration
     {
         Schema::create('excels', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('material');
-            $table->string('designation')->unique();
-            $table->string('gross');
-            $table->string('currency');
-            $table->string('price_factor');
-            $table->string('unit_price');
+            $table->string('material')->nullable();
+            $table->string('designation')->nullable();
+            $table->string('gross')->nullable();
+            $table->string('currency')->nullable();
+            $table->string('price_factor')->nullable();
+            $table->string('unit_price')->nullable();
             $table->boolean('is_deleted')->default('0');
             $table->softDeletes();
             $table->timestamps();
@@ -34,6 +34,6 @@ class CreateExcelTable extends Migration
     */
     public function down()
     {
-        Schema::dropIfExists('excel');
+        Schema::dropIfExists('excels');
     }
 }

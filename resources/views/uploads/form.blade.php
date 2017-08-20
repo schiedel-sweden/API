@@ -5,12 +5,12 @@
         information om importer
     </div>
 
-    <form action="" method="POST">
+    <form action="/" method="POST">
         {{ csrf_field() }}
         @include('layouts.errors')
 
         <div class="form-group">
-            <input type="file" name="" value="">
+            <input type="file" name="import_file">
         </div>
         <div class="form-group">
             <button class="btn btn-info" type="submit" name="button">Ladda upp excel fil</button>
