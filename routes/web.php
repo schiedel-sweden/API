@@ -9,7 +9,7 @@ Auth::routes();
 /*
 * Route for home
 */
-Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/', 'HomeController@index')->name('home');
 
 /*
 * Route to store excel files in the databse.
