@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\ExcelFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 class ExcelFileController extends Controller
 {
@@ -36,35 +38,49 @@ class ExcelFileController extends Controller
   */
   public function store(Request $request)
   {
+    // make sure user is authenticated
+    if(Auth::guest()){
+      return redirect('/login');
+    }
+    // empty database file
     ExcelFile::truncate();
 
 
-    // TODO: Read file that is uploaded, not local to project!
-    // TODO: Logic for duplicate inputs alt. drop table each time new file is uploaded
-    Excel::filter('chunk')->load(public_path() . '/file.xlsx')->chunk(250, function($results)
+    // validate file
+    $this->validate(request(), [
+      'import_file' => 'required'
+    ]);
+
+    // request, name and move imported file
+    $file = $request->file('import_file');
+    $filename = 'file.xlsx';
+    $file->move('uploads', $filename);
+    // set filepath
+    $filepath = public_path() . '/uploads/' . $filename;
+
+    Excel::filter('chunk')->load($filepath)->chunk(250, function($results)
     {
 
       foreach($results->toArray() as $row)
       {
-
         //  0 => "Material"
         //  1 => "NOBB nummer"
         //  2 => "Material                          "
         //  3 => "Priser 01.04.2017"
         //  4 => "Enhet"
         //  5 => null
-
-        ExcelFile::create([
-
+        // populate array to be added to the database, based on $row
+        $excelArray = [
           'material'=>$row[0],
           'designation'=>$row[1],
           'gross'=>$row[2],
           // not available in xlsx file, currently hard-coded
           'currency'=>'SEK',
           'price_factor'=>$row[4],
-          'unit_price'=>$row[3]
-        ]);
-
+          'unit_price'=>$row[3],
+          'created_at'=>Carbon::now()->format('Y-m-d H:i:s')
+        ];
+        ExcelFile::create($excelArray);
       }
 
     });
