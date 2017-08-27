@@ -42,9 +42,6 @@ class ExcelFileController extends Controller
     if(Auth::guest()){
       return redirect('/login');
     }
-    // empty database file
-    ExcelFile::truncate();
-
 
     // validate file
     $this->validate(request(), [
@@ -58,6 +55,9 @@ class ExcelFileController extends Controller
     // set filepath
     $filepath = public_path() . '/uploads/' . $filename;
 
+    // empty database file
+    ExcelFile::truncate();
+    
     Excel::filter('chunk')->load($filepath)->chunk(250, function($results)
     {
 
