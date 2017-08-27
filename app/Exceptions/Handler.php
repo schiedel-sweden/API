@@ -4,8 +4,11 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
-use GrahamCampbell\Exceptions\ExceptionHandler as ExceptionHandler;
+// Fancy dev exceptions
+//use GrahamCampbell\Exceptions\ExceptionHandler as ExceptionHandler;
 
+// "prod" exceptions
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 class Handler extends ExceptionHandler
 {
     /**
