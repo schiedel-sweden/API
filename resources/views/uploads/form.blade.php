@@ -5,7 +5,7 @@
         information om importer
     </div>
 
-    <form action="/" method="POST">
+    <form action="/" method="POST" enctype=multipart/form-data>
         {{ csrf_field() }}
         @include('layouts.errors')
 
