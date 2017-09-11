@@ -21,4 +21,6 @@ Route::POST('/', 'ExcelFileController@store')->middleware('auth');
 */
 Route::get('/api/excel', 'ExcelFileController@index');
 
+Route::get('/api/excel/{sum}', 'ExcelFileController@sum');
+
 // https://stackoverflow.com/questions/43224300/override-default-auth-routes-in-laravel-5-4

@@ -29,6 +29,18 @@ class ExcelFileController extends Controller
     return $columns;
   }
 
+    /**
+     * @param $sum
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|static[]
+     * returns a specific amount of values to the user givin in the URL ex: /api/excel/10 will retunr 10 values
+     */
+  public function sum($sum)
+  {
+      $columns = ExcelFile::take($sum)->where('is_deleted', false)->get();
+
+      return $columns;
+  }
+
 
   /**
   * Store a newly created resource in storage.
