@@ -1,5 +1,5 @@
 <?php
-
+use Psr\Http\Message\ServerRequestInterface;
 /*
 * Route for login, register and password resets
 */
