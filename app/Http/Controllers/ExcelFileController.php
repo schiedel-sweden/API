@@ -41,7 +41,7 @@ class ExcelFileController extends Controller
   {
       $columns = ExcelFile::take($sum)->where('is_deleted', false)->get();
 
-      return $columns;
+      return new JsonResponse($columns);
   }
 
 
