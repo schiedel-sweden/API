@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\ExcelFile;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -24,9 +26,10 @@ class ExcelFileController extends Controller
     $columns = ExcelFile::where('is_deleted', false)->get();
 
     /*
-    * Will return the query as json to adress /api/excel
+     * Will return the query as json to adress /api/excel
+     * Will allso return statuscode for the request
     */
-    return $columns;
+    return new JsonResponse($columns);
   }
 
     /**
@@ -38,7 +41,7 @@ class ExcelFileController extends Controller
   {
       $columns = ExcelFile::take($sum)->where('is_deleted', false)->get();
 
-      return $columns;
+      return new JsonResponse($columns);
   }
 
 
