@@ -63,13 +63,13 @@ class ExcelFileController extends Controller
     // request, name and move imported file
     $file = $request->file('import_file');
     $filename = 'file.xlsx';
-    $file->move('uploads', $filename);
+    $file->move('../storage/uploads/', $filename);
     // set filepath
-    $filepath = public_path() . '/uploads/' . $filename;
+    $filepath = '../storage/uploads/' . $filename;
 
     // empty database file
     ExcelFile::truncate();
-    
+
     Excel::filter('chunk')->load($filepath)->chunk(250, function($results)
     {
 
@@ -96,7 +96,7 @@ class ExcelFileController extends Controller
       }
 
     });
-
+    
     return redirect()->home();
 
   }
