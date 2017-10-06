@@ -1,5 +1,5 @@
 # API
-This application is a tool for uploading excell files. The excell files will
+This application is a tool for uploading excel files. The excel files will
 then be ilustrated as an API that our
 [tablet applications for iOS and Android](https://github.com/schiedel-sweden/Mobile-Application)
 use.
@@ -14,7 +14,7 @@ There are many ways to contribute. Here's a few ideas to get started:
 * Go through the Getting Started guide. Does everything work as expected? If not, we're always looking for improvements. Let us know by opening an issue.
 * Look through the open issues. Provide workarounds, ask for clarification, or suggest labels. Help triage issues.
 * If you find an issue you would like to fix, open a pull request. Issues tagged as Good First Task are a good place to get started.
-* Read through the [Larave docs](https://laravel.com/).
+* Read through the [Laravel docs](https://laravel.com/).
 * Browse Stack Overflow and answer questions. This will help you get familiarized with common pitfalls or misunderstandings, which can be useful when contributing.
 
 ### Installation
@@ -67,7 +67,7 @@ $ php artisan db:seed --class=UsersTableSeeder
 $ php artisan serve
 ```
 
-After doing this you will find a user in the database you can use to sign in with to create new users and import your excelfiles.
+After doing this you will find a user in the database you can use to sign in with to create new users and import your excel files.
 * email => 'info@handelsmarketing.se'
 * password => 'hejsan123'
 
