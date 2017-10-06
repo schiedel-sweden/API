@@ -26,7 +26,7 @@ $ sudo apt install php-mbstring; sudo apt install php-xml;
 ```
 Keep in mind that the above command will only work on Linux systems running on
 Ubuntu 17.04 or similar.
-In order to install php7.1 you also need to have a 3rd party ppa on your Linux systems.
+In order to install php7.1 you also need to have a 3rd party ppa.
 This can be done by running the following:
 
 ```BASH
