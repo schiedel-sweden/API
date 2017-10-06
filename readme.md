@@ -36,8 +36,6 @@ $ sudo apt update
 $ sudo apt install -y php7.1; sudo apt install php7.1-mysql
 ```
 
-Then,
-
 1. Create a directory for all the Schiedel Apps `mkdir schiedel` `cd schiedel`
 
 2. Run
