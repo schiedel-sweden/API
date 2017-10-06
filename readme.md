@@ -3,7 +3,7 @@ This application is a [Laravel API](https://laravel.com/) built for the chimney 
 [iOS and Android repositories](https://github.com/schiedel-sweden/Mobile-Application).
 
 ### Contrbuting
-Follow the guidelines found in the [Contrbuting.md](https://github.com/schiedel-sweden/Mobile-Application/blob/master/CONTRIBUTING.md) file.
+Follow the guidelines found in the [Contrbuting.md](https://github.com/schiedel-sweden/API/blob/master/CONTRIBUTING.md) file.
 There are many ways to contribute. Here's a few ideas to get started:
 * Go through the Getting Started guide. Does everything work as expected? If not, we're always looking for improvements. Let us know by opening an issue.
 * Look through the open issues. Provide workarounds, ask for clarification, or suggest labels. Help triage issues.
