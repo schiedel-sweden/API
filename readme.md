@@ -1,4 +1,10 @@
-# About us
+# API
+This application is a tool for uploading excell files. The excell files will
+then be ilustrated as an API that our
+[tablet applications for iOS and Android](https://github.com/schiedel-sweden/Mobile-Application)
+use.
+
+### About us
 This application is a [Laravel API](https://laravel.com/) built for the chimney company [Schiedel](https://www.schiedel.com/se/) by [HandelsmMrketing](http://www.handelsmarketing.se/). HandelsmMrketing is a student run marketing company who also makes awesome websites and mobile applications. The API is for the iPad and android tablet applications we built. Check out the
 [iOS and Android repositories](https://github.com/schiedel-sweden/Mobile-Application).
 
