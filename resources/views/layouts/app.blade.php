@@ -51,7 +51,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ route('register') }}">Registrera ny användare</a></li>
+                                    <li><a href="#" onclick="javascript:prompt('Bjud in ny användare', '{{ route('register', ['invite_code' => config('auth.invite_code')]) }}');">Bjud in ny användare</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

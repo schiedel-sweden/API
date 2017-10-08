@@ -99,4 +99,15 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Registration Invite Code
+    |--------------------------------------------------------------------------
+    |
+    | An account may only be registered if the invite code is provided.
+    |
+    */
+    'invite_code' => env('INVITE_CODE')
+
+
 ];
