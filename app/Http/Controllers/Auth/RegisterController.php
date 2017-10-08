@@ -36,7 +36,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+         $this->middleware('auth');
     }
 
     /**
@@ -51,7 +51,6 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'invite_code' => 'required|in:' . config('auth.invite_code')
         ]);
     }
 

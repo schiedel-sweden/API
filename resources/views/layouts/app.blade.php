@@ -42,14 +42,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            @if (\Request::is('register'))
-                                <li><a href="{{ route('login') }}">Logga in</a></li>
-                            @endif
-                            @if (\Request::is('login'))
-                                <li><a href="{{ route('register') }}">Registrera dig</a></li>
-                            @endif
-                        @else
+                        @if (!Auth::guest())
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -57,8 +50,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="#"
-                                            onclick="javascript:prompt('Hämta inbjudningskod för nya användare. \nDet är viktigt att inbjudningskoden inte hammnar i fel händer. \nOm detta skulle Ske vänligen kontaka support. \nInbjudnningskod:' , '{{config('auth.invite_code') }}');">
+                                        <a href="{{ route('register') }}">
                                             Registrera ny användare
                                         </a>
                                     </li>
