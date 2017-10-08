@@ -5,7 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Registrera en ny användare</div>
+                <div class="panel-heading">
+                    <h3>Registrera en ny användare</h3>
+                    <span>
+                        Du behöver en inbjudnings kod för att kunna registrera
+                        dig. Om du inte har en kod prata med din administratör.
+                    </span>
+                </div>
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}

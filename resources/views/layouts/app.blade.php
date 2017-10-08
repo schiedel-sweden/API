@@ -43,7 +43,12 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Logga in</a></li>
+                            @if (\Request::is('register'))
+                                <li><a href="{{ route('login') }}">Logga in</a></li>
+                            @endif
+                            @if (\Request::is('login'))
+                                <li><a href="{{ route('register') }}">Registrera dig</a></li>
+                            @endif
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -51,7 +56,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#" onclick="javascript:prompt('Bjud in ny användare', '{{ route('register', ['invite_code' => config('auth.invite_code')]) }}');">Bjud in ny användare</a></li>
+                                    <li>
+                                        <a href="#"
+                                            onclick="javascript:prompt('Hämta inbjudningskod för nya användare. \nDet är viktigt att inbjudningskoden inte hammnar i fel händer. \nOm detta skulle Ske vänligen kontaka support. \nInbjudnningskod:' , '{{config('auth.invite_code') }}');">
+                                            Registrera ny användare
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
