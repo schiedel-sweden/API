@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Notifications\UserRegistered;
 
 class RegisterController extends Controller
 {
@@ -72,5 +73,19 @@ class RegisterController extends Controller
         event(new UserCreated($user));
 
         return $user;
+    }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function registered(Request $request, $user)
+    {
+        if (\App::environment('production')) {
+            $user->notify(new UserRegistered($user));
+        }
     }
 }
