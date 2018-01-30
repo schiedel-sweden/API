@@ -5,7 +5,7 @@ then be ilustrated as an API that our
 use.
 
 ### About us
-This application is a [Laravel API](https://laravel.com/) built for the chimney company [Schiedel](https://www.schiedel.com/se/) by [HandelsmMrketing](http://www.handelsmarketing.se/). HandelsmMrketing is a student run marketing company who also makes awesome websites and mobile applications. The API is for the iPad and android tablet applications we built. Check out the
+This application is a [Laravel API](https://laravel.com/) built for the chimney company [Schiedel](https://www.schiedel.com/se/.
 [iOS and Android repositories](https://github.com/schiedel-sweden/Mobile-Application).
 
 ### Contrbuting
@@ -72,6 +72,3 @@ After doing this you will find a user in the database you can use to sign in wit
 
 ## To publish application
 `php artisan vendor:publish`
-
-## License
-#### [MIT License](https://mitlicense.org/)
